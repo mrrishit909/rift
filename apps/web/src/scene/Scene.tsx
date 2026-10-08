@@ -113,8 +113,8 @@ function Buildings({ data }: { data: Data }) {
   const boxGeo = useMemo(() => { let m: THREE.Mesh | null = null; gltf.scene.traverse((o) => { if (!m && o.name === "Building1" && (o as THREE.Mesh).isMesh) m = o as THREE.Mesh; }); return (m as unknown as THREE.Mesh).geometry; }, [gltf]);
   const ref = useRef<THREE.InstancedMesh>(null);
   useEffect(() => {
-    const im = ref.current; if (!im) return; const d = new THREE.Object3D();
-    data.buildings.forEach((b, i) => { d.position.set(b.x * U, (b.heightM * U) / 2, -b.z * U); d.scale.set(1.4, b.heightM * U, 1.4); d.updateMatrix(); im.setMatrixAt(i, d.matrix); });
+    const im = ref.current; if (!im) return; const d = new THREE.Object3D(), white = new THREE.Color(1, 1, 1);
+    data.buildings.forEach((b, i) => { d.position.set(b.x * U, (b.heightM * U) / 2, -b.z * U); d.scale.set(1.4, b.heightM * U, 1.4); d.updateMatrix(); im.setMatrixAt(i, d.matrix); im.setColorAt(i, white); });
     im.instanceMatrix.needsUpdate = true;
   }, [data]);
   useFrame(() => {
