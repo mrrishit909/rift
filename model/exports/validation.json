@@ -1,0 +1,23 @@
+{
+ "infra-shaft.glb": {
+  "tris": 338,
+  "bytes": 25592,
+  "materials": [
+   "Concrete",
+   "Iron",
+   "Magma"
+  ],
+  "missing": [],
+  "orphans": []
+ },
+ "building-kit.glb": {
+  "tris": 120,
+  "bytes": 15272,
+  "materials": [
+   "Concrete",
+   "WindowGlass"
+  ],
+  "missing": [],
+  "orphans": []
+ }
+}

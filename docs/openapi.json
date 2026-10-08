@@ -1,0 +1,35 @@
+{
+ "openapi": "3.1.0",
+ "info": {
+  "title": "RIFT API",
+  "version": "1.0.0",
+  "description": "Synthetic seismic risk and subsurface infrastructure demo data."
+ },
+ "paths": {
+  "/v1/event": {
+   "get": {
+    "summary": "The seismic event"
+   }
+  },
+  "/v1/buildings": {
+   "get": {
+    "summary": "List buildings with current risk at ?t="
+   }
+  },
+  "/v1/infrastructure": {
+   "get": {
+    "summary": "Infrastructure nodes and edges with failure state at ?t="
+   }
+  },
+  "/v1/buildings/{id}/notes": {
+   "post": {
+    "summary": "Add an inspection note; requires Idempotency-Key"
+   }
+  },
+  "/v1/event/live": {
+   "get": {
+    "summary": "WebSocket: replays the rupture as Frame messages (query speed=1..60)"
+   }
+  }
+ }
+}
